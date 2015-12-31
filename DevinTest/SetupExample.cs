@@ -7,8 +7,6 @@ namespace DevinTest
     {
         public SetupExample()
         {
-        
-
 
         }
     }
