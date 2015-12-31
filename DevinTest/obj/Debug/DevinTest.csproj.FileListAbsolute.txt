@@ -1,0 +1,15 @@
+c:\users\simtay111\documents\github\DevinTest\DevinTest\bin\Debug\DevinTest.dll
+c:\users\simtay111\documents\github\DevinTest\DevinTest\bin\Debug\DevinTest.pdb
+c:\users\simtay111\documents\github\DevinTest\DevinTest\bin\Debug\FluentAssertions.Core.dll
+c:\users\simtay111\documents\github\DevinTest\DevinTest\bin\Debug\FluentAssertions.dll
+c:\users\simtay111\documents\github\DevinTest\DevinTest\bin\Debug\nunit.framework.dll
+c:\users\simtay111\documents\github\DevinTest\DevinTest\bin\Debug\FluentAssertions.pdb
+c:\users\simtay111\documents\github\DevinTest\DevinTest\bin\Debug\FluentAssertions.xml
+c:\users\simtay111\documents\github\DevinTest\DevinTest\bin\Debug\FluentAssertions.Core.pdb
+c:\users\simtay111\documents\github\DevinTest\DevinTest\bin\Debug\FluentAssertions.Core.xml
+c:\users\simtay111\documents\github\DevinTest\DevinTest\bin\Debug\nunit.framework.xml
+c:\users\simtay111\documents\github\DevinTest\DevinTest\obj\Debug\DevinTest.csprojResolveAssemblyReference.cache
+c:\users\simtay111\documents\github\DevinTest\DevinTest\obj\Debug\DevinTest.dll
+c:\users\simtay111\documents\github\DevinTest\DevinTest\obj\Debug\DevinTest.pdb
+c:\users\simtay111\documents\github\DevinTest\DevinTest\bin\Debug\Moq.dll
+c:\users\simtay111\documents\github\DevinTest\DevinTest\bin\Debug\Moq.xml
