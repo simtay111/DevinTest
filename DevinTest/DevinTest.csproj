@@ -57,6 +57,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DevinTest.cs" />
+    <Compile Include="Inheritance.cs" />
+    <Compile Include="Scoping.cs" />
     <Compile Include="SetupExample.cs" />
     <Compile Include="Targeter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
