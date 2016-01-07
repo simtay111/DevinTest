@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using NUnit.Framework;
 
 namespace DevinTest
 {
@@ -6,6 +8,16 @@ namespace DevinTest
     {
         public string Color { get; set; }
         public string Name { get; set; }
+
+        public virtual void MakeSound()
+        {
+            Console.WriteLine("Grunt from " + Name);
+        }
+
+        public void EatFood()
+        {
+
+        }
     }
 
     public class Zebra : Animal
@@ -18,36 +30,62 @@ namespace DevinTest
         }
 
         public int NumberOfStripes { get; set; }
+
+        public override void MakeSound()
+        {
+            Console.WriteLine("Neight from " + Name);
+        }
+
     }
 
     public class Lion : Animal
     {
         public int ZebrasEaten { get; set; }
+
+        public override string ToString()
+        {
+            return "I am a lion" + Name;
+        }
+    }
+
+    public class ScreamingLion : Lion
+    {
+        public override void MakeSound()
+        {
+            Console.WriteLine("I am a screaming lion");
+        }
     }
 
     public class Zoo
     {
+        [Test]
         public void GetCOuntOfANimal()
         {
             var animals = new List<Animal>();
 
             var zebra1 = new Zebra("Black", "Zeby", 44);
-
-
-            var zebra2 = new Zebra("Black", "Name", 55);
-            var lion = new Lion();
+            var zebra2 = new Zebra("Black", "Zeby2", 55);
+            var lion = new Lion() { Name = "Lioner" };
 
             animals.Add(zebra1);
             animals.Add(zebra2);
             animals.Add(lion);
+            animals.Add(new ScreamingLion());
 
-            //animals length is 3
-            lion.Name = "Simon";
+            foreach (var animal in animals)
+            {
+                animal.MakeSound();
+            }
 
-            var integerList = new List<int> { 2, 3, 4 };
-            integerList.Add(23);
-            //integerList.Add("23");
 
+        }
+
+        [Test]
+        public void ToStringTest()
+        {
+            var zebra = new Lion();
+
+            Console.WriteLine(zebra.ToString());
 
         }
     }

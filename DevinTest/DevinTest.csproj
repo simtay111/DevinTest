@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="DevinTest.cs" />
     <Compile Include="Inheritance.cs" />
+    <Compile Include="LinqSelect.cs" />
     <Compile Include="Scoping.cs" />
     <Compile Include="SetupExample.cs" />
     <Compile Include="Statics.cs" />
