@@ -1,9 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevinTest", "DevinTest\DevinTest.csproj", "{F4408DFB-CFCA-4440-8190-15AB8D1FFFA8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevinLearnGood", "DevinLearnGood\DevinLearnGood.csproj", "{37CDAA68-5682-4E2F-AB91-432B674D4F83}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevinLearnGoodTest", "DevinLearnGoodTest\DevinLearnGoodTest.csproj", "{B68E46B1-F2CA-459C-BC56-9C276F1DD641}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{F4408DFB-CFCA-4440-8190-15AB8D1FFFA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F4408DFB-CFCA-4440-8190-15AB8D1FFFA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F4408DFB-CFCA-4440-8190-15AB8D1FFFA8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37CDAA68-5682-4E2F-AB91-432B674D4F83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37CDAA68-5682-4E2F-AB91-432B674D4F83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37CDAA68-5682-4E2F-AB91-432B674D4F83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37CDAA68-5682-4E2F-AB91-432B674D4F83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B68E46B1-F2CA-459C-BC56-9C276F1DD641}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B68E46B1-F2CA-459C-BC56-9C276F1DD641}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B68E46B1-F2CA-459C-BC56-9C276F1DD641}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B68E46B1-F2CA-459C-BC56-9C276F1DD641}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

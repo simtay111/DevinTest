@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DevinTest.cs" />
+    <Compile Include="FieldsAndLocals.cs" />
     <Compile Include="Inheritance.cs" />
     <Compile Include="LinqSelect.cs" />
     <Compile Include="Scoping.cs" />
