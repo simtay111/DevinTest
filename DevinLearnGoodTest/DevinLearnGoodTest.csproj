@@ -52,6 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AbilityToDriveCalculator.cs" />
     <Compile Include="DevinCounterTests.cs" />
     <Compile Include="DrinkPrinterTests.cs" />
     <Compile Include="IngredientPrinterTests.cs" />

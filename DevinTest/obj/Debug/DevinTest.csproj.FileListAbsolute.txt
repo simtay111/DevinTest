@@ -1,18 +1,3 @@
-c:\users\simtay111\documents\github\DevinTest\DevinTest\bin\Debug\DevinTest.dll
-c:\users\simtay111\documents\github\DevinTest\DevinTest\bin\Debug\DevinTest.pdb
-c:\users\simtay111\documents\github\DevinTest\DevinTest\bin\Debug\FluentAssertions.Core.dll
-c:\users\simtay111\documents\github\DevinTest\DevinTest\bin\Debug\FluentAssertions.dll
-c:\users\simtay111\documents\github\DevinTest\DevinTest\bin\Debug\nunit.framework.dll
-c:\users\simtay111\documents\github\DevinTest\DevinTest\bin\Debug\FluentAssertions.pdb
-c:\users\simtay111\documents\github\DevinTest\DevinTest\bin\Debug\FluentAssertions.xml
-c:\users\simtay111\documents\github\DevinTest\DevinTest\bin\Debug\FluentAssertions.Core.pdb
-c:\users\simtay111\documents\github\DevinTest\DevinTest\bin\Debug\FluentAssertions.Core.xml
-c:\users\simtay111\documents\github\DevinTest\DevinTest\bin\Debug\nunit.framework.xml
-c:\users\simtay111\documents\github\DevinTest\DevinTest\obj\Debug\DevinTest.csprojResolveAssemblyReference.cache
-c:\users\simtay111\documents\github\DevinTest\DevinTest\obj\Debug\DevinTest.dll
-c:\users\simtay111\documents\github\DevinTest\DevinTest\obj\Debug\DevinTest.pdb
-c:\users\simtay111\documents\github\DevinTest\DevinTest\bin\Debug\Moq.dll
-c:\users\simtay111\documents\github\DevinTest\DevinTest\bin\Debug\Moq.xml
 C:\Users\Mr Bonky\Documents\GitHub\DevinTest\DevinTest\obj\Debug\DevinTest.csprojResolveAssemblyReference.cache
 C:\Users\Mr Bonky\Documents\GitHub\DevinTest\DevinTest\obj\Debug\DevinTest.dll
 C:\Users\Mr Bonky\Documents\GitHub\DevinTest\DevinTest\obj\Debug\DevinTest.pdb
@@ -28,3 +13,18 @@ C:\Users\Mr Bonky\Documents\GitHub\DevinTest\DevinTest\bin\Debug\FluentAssertion
 C:\Users\Mr Bonky\Documents\GitHub\DevinTest\DevinTest\bin\Debug\FluentAssertions.Core.xml
 C:\Users\Mr Bonky\Documents\GitHub\DevinTest\DevinTest\bin\Debug\Moq.xml
 C:\Users\Mr Bonky\Documents\GitHub\DevinTest\DevinTest\bin\Debug\nunit.framework.xml
+C:\Users\Simtay111\Documents\GitHub\DevinTest\DevinTest\bin\Debug\DevinTest.dll
+C:\Users\Simtay111\Documents\GitHub\DevinTest\DevinTest\bin\Debug\DevinTest.pdb
+C:\Users\Simtay111\Documents\GitHub\DevinTest\DevinTest\bin\Debug\FluentAssertions.Core.dll
+C:\Users\Simtay111\Documents\GitHub\DevinTest\DevinTest\bin\Debug\FluentAssertions.dll
+C:\Users\Simtay111\Documents\GitHub\DevinTest\DevinTest\bin\Debug\Moq.dll
+C:\Users\Simtay111\Documents\GitHub\DevinTest\DevinTest\bin\Debug\nunit.framework.dll
+C:\Users\Simtay111\Documents\GitHub\DevinTest\DevinTest\bin\Debug\FluentAssertions.pdb
+C:\Users\Simtay111\Documents\GitHub\DevinTest\DevinTest\bin\Debug\FluentAssertions.xml
+C:\Users\Simtay111\Documents\GitHub\DevinTest\DevinTest\bin\Debug\FluentAssertions.Core.pdb
+C:\Users\Simtay111\Documents\GitHub\DevinTest\DevinTest\bin\Debug\FluentAssertions.Core.xml
+C:\Users\Simtay111\Documents\GitHub\DevinTest\DevinTest\bin\Debug\Moq.xml
+C:\Users\Simtay111\Documents\GitHub\DevinTest\DevinTest\bin\Debug\nunit.framework.xml
+C:\Users\Simtay111\Documents\GitHub\DevinTest\DevinTest\obj\Debug\DevinTest.csprojResolveAssemblyReference.cache
+C:\Users\Simtay111\Documents\GitHub\DevinTest\DevinTest\obj\Debug\DevinTest.dll
+C:\Users\Simtay111\Documents\GitHub\DevinTest\DevinTest\obj\Debug\DevinTest.pdb
