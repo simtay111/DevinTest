@@ -1,4 +1,0 @@
-C:\Users\Simtay111\Documents\GitHub\DevinTest\DevinLearnGood\bin\Debug\DevinLearnGood.dll
-C:\Users\Simtay111\Documents\GitHub\DevinTest\DevinLearnGood\bin\Debug\DevinLearnGood.pdb
-C:\Users\Simtay111\Documents\GitHub\DevinTest\DevinLearnGood\obj\Debug\DevinLearnGood.dll
-C:\Users\Simtay111\Documents\GitHub\DevinTest\DevinLearnGood\obj\Debug\DevinLearnGood.pdb

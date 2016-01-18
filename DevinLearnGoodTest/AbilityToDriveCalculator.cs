@@ -60,6 +60,7 @@ namespace DevinLearnGoodTest
 
             isAbleToDrive.Should().BeTrue();
 
+
             numberOfCrackers = 40;
             numberOfBeers = 6;
             isAbleToDrive = _calculator.CalculateIfAbleToDrive(numberOfBeers, numberOfHours, numberOfCrackers);
