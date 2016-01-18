@@ -1,29 +1,43 @@
-﻿namespace DevinLearnGood
+﻿using System;
+using System.Security.Cryptography.X509Certificates;
+
+namespace DevinLearnGood
 {
     public class AbilityToDriveCalculator
     {
-        public bool CalculateIfAbleToDrive(double numberOfBeers, double numberOfHours, double numberOfCrackers)
+        private const int BeerToHourRatioLimit = 1;
+        private const int NumberOfCrackersToNegateABeer = 10;
+        private const int MaxNumberOfBeersCrackersCanReduce = 3;
+
+        public bool CalculateIfAbleToDrive(double numberOfBeersDrankTotal, double numberOfHours, double numberOfCrackers)
         {
-            var crackersWillHelpWithBeers = (numberOfCrackers / 10);
+            var beersNegatedByCrackers = GetBeersNEgatedByCrackers(numberOfCrackers);
 
-            var crackersHaveMaxedOutHelpingBloodAlcoholContent = crackersWillHelpWithBeers <= 3;
+            var actualBeerToHourRatio = GetBeersToHoursRatio(numberOfBeersDrankTotal, numberOfHours, beersNegatedByCrackers);
 
-            var crackersDidDeluteBloodAlcoholContent = crackersWillHelpWithBeers >= 1;
+            var isBeerRatioOverLimit = actualBeerToHourRatio > BeerToHourRatioLimit;
 
-            var beersToHoursRatio = (numberOfBeers / numberOfHours);
-
-            var isGreaterThanOnePerHour = beersToHoursRatio > 1;
-
-            return !isGreaterThanOnePerHour;
-
-            //var beersToHoursRatio = (numberofbeers / numberofhours);
-
-            //var isGreaterThanOnePerHour = beersToHoursRatio > 1;
-
-            //return !isGreaterThanOnePerHour;
-
+            return !isBeerRatioOverLimit;
         }
 
+        private static double GetBeersToHoursRatio(double numberOfBeersDrankTotal, double numberOfHours,
+            double beersNegatedByCrackers)
+        {
+            var totalNumberOfAffectingBeers = (numberOfBeersDrankTotal - beersNegatedByCrackers);
 
+            var beersToHoursRatio = (totalNumberOfAffectingBeers / numberOfHours);
+            return beersToHoursRatio;
+        }
+
+        private double GetBeersNEgatedByCrackers(double numberOfCrackers)
+        {
+            var beersNegatedByCrackers = Math.Floor(numberOfCrackers / NumberOfCrackersToNegateABeer);
+
+            var crackersHaveMaxedOutHelpingBloodAlcoholContent = beersNegatedByCrackers >= MaxNumberOfBeersCrackersCanReduce;
+
+            beersNegatedByCrackers = crackersHaveMaxedOutHelpingBloodAlcoholContent ? MaxNumberOfBeersCrackersCanReduce : beersNegatedByCrackers;
+
+            return beersNegatedByCrackers;
+        }
     }
 }
