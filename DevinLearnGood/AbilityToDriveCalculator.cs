@@ -4,13 +4,22 @@ namespace DevinLearnGood
 {
     public class AbilityToDriveCalculator
     {
+        private readonly IAlcoholMultiplierProvider _alcoholMultiplierProvider;
+
+        public AbilityToDriveCalculator(IAlcoholMultiplierProvider alcoholMultiplierProvider)
+        {
+            _alcoholMultiplierProvider = alcoholMultiplierProvider;
+        }
+
         private const int BeerToHourRatioLimit = 1;
         private const int NumberOfCrackersToNegateABeer = 10;
         private const int MaxNumberOfBeersCrackersCanReduce = 3;
 
         public bool CalculateIfAbleToDrive(double numberOfBeersDrankTotal, double numberOfHours, double numberOfCrackers)
         {
-            var numberOfAffectingBeers = GetCountOfBeersDrankThatAffectRatio(numberOfBeersDrankTotal, numberOfCrackers);
+            var numberOfDrinksDrank = numberOfBeersDrankTotal * _alcoholMultiplierProvider.GetMultiplier();
+
+            var numberOfAffectingBeers = GetCountOfBeersDrankThatAffectRatio(numberOfDrinksDrank, numberOfCrackers);
 
             var actualRatioOfBeersToHours = numberOfAffectingBeers / numberOfHours;
 

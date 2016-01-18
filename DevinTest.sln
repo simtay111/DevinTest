@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevinLearnGood", "DevinLear
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevinLearnGoodTest", "DevinLearnGoodTest\DevinLearnGoodTest.csproj", "{B68E46B1-F2CA-459C-BC56-9C276F1DD641}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShouldIDrive", "ShouldIDrive\ShouldIDrive.csproj", "{6F6BB399-08C8-46B2-A01D-93AEDDF05DDB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{B68E46B1-F2CA-459C-BC56-9C276F1DD641}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B68E46B1-F2CA-459C-BC56-9C276F1DD641}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B68E46B1-F2CA-459C-BC56-9C276F1DD641}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F6BB399-08C8-46B2-A01D-93AEDDF05DDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F6BB399-08C8-46B2-A01D-93AEDDF05DDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F6BB399-08C8-46B2-A01D-93AEDDF05DDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F6BB399-08C8-46B2-A01D-93AEDDF05DDB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

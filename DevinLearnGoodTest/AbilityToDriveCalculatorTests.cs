@@ -1,5 +1,7 @@
-﻿using DevinLearnGood;
+﻿using System;
+using DevinLearnGood;
 using FluentAssertions;
+using Moq;
 using NUnit.Framework;
 
 namespace DevinLearnGoodTest
@@ -8,11 +10,22 @@ namespace DevinLearnGoodTest
     public class AbilityToDriveCalculatorTests
     {
         private AbilityToDriveCalculator _calculator;
+        private MockedAlcoholProvider _alcoholProvider;
 
         [SetUp]
         public void SetUp()
         {
-            _calculator = new AbilityToDriveCalculator();
+            _alcoholProvider = new MockedAlcoholProvider();
+            _calculator = new AbilityToDriveCalculator(_alcoholProvider);
+        }
+
+        [Test]
+        public void AccountsForAlcoholMultiplierWhenCountingDrinksDrank()
+        {
+            _alcoholProvider.SetupProviderToReturnMultipler(2);
+
+            _calculator.CalculateIfAbleToDrive(1, 3, 0).Should().BeTrue();
+            _calculator.CalculateIfAbleToDrive(2, 3, 0).Should().BeFalse();
         }
 
         [Test]
@@ -85,5 +98,6 @@ namespace DevinLearnGoodTest
 
             isAbleToDrive.Should().BeTrue();
         }
+
     }
 }

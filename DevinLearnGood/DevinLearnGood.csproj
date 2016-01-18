@@ -43,6 +43,7 @@
     <Compile Include="AbilityToDriveCalculator.cs" />
     <Compile Include="DrinkCounter.cs" />
     <Compile Include="DrinkPrinter.cs" />
+    <Compile Include="IAlcoholMultiplierProvider.cs" />
     <Compile Include="IngredientPrinter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
