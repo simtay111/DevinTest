@@ -2,9 +2,13 @@
 {
     public class AbilityToDriveCalculator
     {
-        public bool Calculate(int numberOfBeers, int numberOfHours, int numberOfCrackers)
+        public bool CalculateIfAbleToDrive(double numberOfBeers, double numberOfHours, double numberOfCrackers)
         {
-            throw new System.NotImplementedException();
+            var beersToHoursRatio = (numberOfBeers / numberOfHours);
+
+            var isGreaterThanOnePerHour = beersToHoursRatio > 1;
+
+            return !isGreaterThanOnePerHour;
         }
     }
 }

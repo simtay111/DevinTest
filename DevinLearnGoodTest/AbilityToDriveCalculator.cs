@@ -22,12 +22,12 @@ namespace DevinLearnGoodTest
             var numberOfHours = 3;
             var numberOfCrackers = 0;
 
-            var isAbleToDrive = _calculator.Calculate(numberOfBeers, numberOfHours, numberOfCrackers);
+            var isAbleToDrive = _calculator.CalculateIfAbleToDrive(numberOfBeers, numberOfHours, numberOfCrackers);
 
             isAbleToDrive.Should().BeTrue();
 
             numberOfBeers = 4;
-            isAbleToDrive = _calculator.Calculate(numberOfBeers, numberOfHours, numberOfCrackers);
+            isAbleToDrive = _calculator.CalculateIfAbleToDrive(numberOfBeers, numberOfHours, numberOfCrackers);
 
             isAbleToDrive.Should().BeFalse();
         }
@@ -39,12 +39,12 @@ namespace DevinLearnGoodTest
             var numberOfHours = 3;
             var numberOfCrackers = 9;
 
-            var isAbleToDrive = _calculator.Calculate(numberOfBeers, numberOfHours, numberOfCrackers);
+            var isAbleToDrive = _calculator.CalculateIfAbleToDrive(numberOfBeers, numberOfHours, numberOfCrackers);
 
             isAbleToDrive.Should().BeFalse();
 
             numberOfCrackers = 10;
-            isAbleToDrive = _calculator.Calculate(numberOfBeers, numberOfHours, numberOfCrackers);
+            isAbleToDrive = _calculator.CalculateIfAbleToDrive(numberOfBeers, numberOfHours, numberOfCrackers);
 
             isAbleToDrive.Should().BeTrue();
         }
@@ -56,13 +56,13 @@ namespace DevinLearnGoodTest
             var numberOfHours = 2;
             var numberOfCrackers = 30;
 
-            var isAbleToDrive = _calculator.Calculate(numberOfBeers, numberOfHours, numberOfCrackers);
+            var isAbleToDrive = _calculator.CalculateIfAbleToDrive(numberOfBeers, numberOfHours, numberOfCrackers);
 
             isAbleToDrive.Should().BeTrue();
 
             numberOfCrackers = 40;
             numberOfBeers = 6;
-            isAbleToDrive = _calculator.Calculate(numberOfBeers, numberOfHours, numberOfCrackers);
+            isAbleToDrive = _calculator.CalculateIfAbleToDrive(numberOfBeers, numberOfHours, numberOfCrackers);
 
             isAbleToDrive.Should().BeFalse();
         }
