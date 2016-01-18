@@ -67,5 +67,23 @@ namespace DevinLearnGoodTest
 
             isAbleToDrive.Should().BeFalse();
         }
+
+        [Test]
+        public void OneHundredCrackersEatenWillNegateAllBeer()
+        {
+            var numberOfBeers = 25;
+            var numberOfHours = 1;
+            var numberOfCrackers = 99;
+
+            var isAbleToDrive = _calculator.CalculateIfAbleToDrive(numberOfBeers, numberOfHours, numberOfCrackers);
+
+            isAbleToDrive.Should().BeFalse();
+
+            numberOfCrackers = 100;
+
+            isAbleToDrive = _calculator.CalculateIfAbleToDrive(numberOfBeers, numberOfHours, numberOfCrackers);
+
+            isAbleToDrive.Should().BeTrue();
+        }
     }
 }

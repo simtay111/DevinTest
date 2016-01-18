@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Security.Cryptography.X509Certificates;
 
 namespace DevinLearnGood
 {
@@ -11,18 +10,37 @@ namespace DevinLearnGood
 
         public bool CalculateIfAbleToDrive(double numberOfBeersDrankTotal, double numberOfHours, double numberOfCrackers)
         {
+            var numberOfAffectingBeers = GetCountOfBeersDrankThatAffectRatio(numberOfBeersDrankTotal, numberOfCrackers);
+
+            var actualRatioOfBeersToHours = numberOfAffectingBeers / numberOfHours;
+
+            return actualRatioOfBeersToHours <= BeerToHourRatioLimit;
+        }
+
+        private static double GetCountOfBeersDrankThatAffectRatio(double numberOfBeersDrankTotal, double numberOfCrackers)
+        {
+            var numberOfBeersCrackersHelpedNegate = GetNumberOfBeersLessCrackerBeers(numberOfCrackers, numberOfBeersDrankTotal);
+
+            return numberOfBeersDrankTotal - numberOfBeersCrackersHelpedNegate;
+        }
+
+        private static double GetNumberOfBeersLessCrackerBeers(double numberOfCrackers, double numberOfBeersDrankTotal)
+        {
+            if (numberOfCrackers >= 100)
+                return numberOfBeersDrankTotal;
+
             var numberOfBeersCrackersHelpedNegate = Math.Floor(numberOfCrackers / NumberOfCrackersToNegateABeer);
 
-            var isBeerRatioOverTheLimit = ((numberOfBeersDrankTotal - numberOfBeersCrackersHelpedNegate) / numberOfHours <= BeerToHourRatioLimit);
+            numberOfBeersCrackersHelpedNegate = AccountForMaximumBeersCrackersCanNegate(numberOfBeersCrackersHelpedNegate);
 
-            
+            return numberOfBeersCrackersHelpedNegate;
+        }
 
-
-
-            return isBeerRatioOverTheLimit;
-
-
-
+        private static double AccountForMaximumBeersCrackersCanNegate(double numberOfBeersCrackersHelpedNegate)
+        {
+            if (numberOfBeersCrackersHelpedNegate > MaxNumberOfBeersCrackersCanReduce)
+                numberOfBeersCrackersHelpedNegate = MaxNumberOfBeersCrackersCanReduce;
+            return numberOfBeersCrackersHelpedNegate;
         }
     }
 }
