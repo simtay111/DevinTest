@@ -16,6 +16,7 @@ namespace DevinLearnGoodTest
         public void SetUp()
         {
             _alcoholProvider = new MockedAlcoholProvider();
+            _alcoholProvider.SetupProviderToReturnMultipler(1);
             _calculator = new AbilityToDriveCalculator(_alcoholProvider);
         }
 

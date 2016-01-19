@@ -58,6 +58,8 @@
     <Compile Include="AbilityToDriveCalculatorTests.cs" />
     <Compile Include="DevinCounterTests.cs" />
     <Compile Include="DrinkPrinterTests.cs" />
+    <Compile Include="HorseHayQualityProviderTests.cs" />
+    <Compile Include="HorseHayToFeedAmountProviderTests.cs" />
     <Compile Include="IngredientPrinterTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="BeerAlcoholProviderTests.cs" />

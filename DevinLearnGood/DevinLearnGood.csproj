@@ -43,6 +43,8 @@
     <Compile Include="AbilityToDriveCalculator.cs" />
     <Compile Include="DrinkCounter.cs" />
     <Compile Include="DrinkPrinter.cs" />
+    <Compile Include="HorseHayQualityProvider.cs" />
+    <Compile Include="HorseHayToFeedAmountProvider.cs" />
     <Compile Include="IAlcoholMultiplierProvider.cs" />
     <Compile Include="IngredientPrinter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
