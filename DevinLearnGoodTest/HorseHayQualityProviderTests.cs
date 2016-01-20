@@ -16,7 +16,7 @@ namespace DevinLearnGoodTest
         }
 
         [Test]
-        public void ReturnsLowQualityForHayThatIsUnder50Green()
+        public void ReturnsPoorForHayThatIsUnder50Green()
         {
             var quality = _provider.GetQualityBasedOnGreenness(49);
 

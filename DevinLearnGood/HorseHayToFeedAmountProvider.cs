@@ -1,10 +1,20 @@
-﻿namespace DevinLearnGood
+﻿using System;
+
+namespace DevinLearnGood
 {
     public class HorseHayToFeedAmountProvider
     {
-        public int GetHayForHorse(Horse horse)
+        public double GetHayForHorse(Horse horse)
         {
-            throw new System.NotImplementedException();
+            var preciseNumberOfLeavesToProvide = Math.Ceiling((double)horse.WeightInPounds / 30);
+
+            if ((double)horse.Age < 4)
+                preciseNumberOfLeavesToProvide = preciseNumberOfLeavesToProvide * 2;
+
+            var doubleOfRoundedValue = (preciseNumberOfLeavesToProvide);
+
+            return doubleOfRoundedValue;
+
         }
     }
 

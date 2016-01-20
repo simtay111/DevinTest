@@ -1,10 +1,21 @@
-﻿namespace DevinLearnGood
+﻿using System;
+using System.CodeDom;
+
+namespace DevinLearnGood
 {
     public class HorseHayQualityProvider
     {
+
         public HayQuality GetQualityBasedOnGreenness(int greenness)
         {
-            return HayQuality.Average;
+            if (greenness < 50)
+                return HayQuality.Poor;
+            if (greenness >= 50 && greenness < 80)
+                return HayQuality.Average;
+            if (greenness >= 80 && greenness < 90)
+                return HayQuality.Good;
+
+            return greenness >= 90 ? HayQuality.Excellent : HayQuality.Good;
         }
     }
 

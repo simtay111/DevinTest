@@ -28,13 +28,13 @@ namespace DevinLearnGoodTest
         [Test]
         public void ReturnsOneLeaveForEveryThirtyPounds()
         {
-            var horse = new Horse { WeightInPounds = 61 };
+            var horse = new Horse { WeightInPounds = 61, Age = 5 };
 
             var leaves = _provider.GetHayForHorse(horse);
 
             leaves.Should().Be(3);
 
-            new Horse { WeightInPounds = 60 };
+            horse.WeightInPounds = 60;
 
             leaves = _provider.GetHayForHorse(horse);
 
@@ -50,11 +50,21 @@ namespace DevinLearnGoodTest
 
             leaves.Should().Be(4);
 
-            new Horse { WeightInPounds = 60, Age = 4 };
+            horse = new Horse { WeightInPounds = 60, Age = 4 };
 
             leaves = _provider.GetHayForHorse(horse);
 
             leaves.Should().Be(2);
+        }
+
+        [Test]
+        public void UnderageDoublesTheRoundedAdultAmountOfLeaves()
+        {
+            var horse = new Horse { WeightInPounds = 45, Age = 2 };
+
+            var leaves = _provider.GetHayForHorse(horse);
+
+            leaves.Should().Be(4);
         }
     }
 }
