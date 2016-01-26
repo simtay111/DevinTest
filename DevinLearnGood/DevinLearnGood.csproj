@@ -41,6 +41,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AbilityToDriveCalculator.cs" />
+    <Compile Include="AbstractEmployee.cs" />
+    <Compile Include="DependencyInjectionSample.cs" />
     <Compile Include="DrinkCounter.cs" />
     <Compile Include="DrinkPrinter.cs" />
     <Compile Include="HorseHayQualityProvider.cs" />
@@ -48,6 +50,7 @@
     <Compile Include="IAlcoholMultiplierProvider.cs" />
     <Compile Include="IngredientPrinter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UncleBobBowling.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

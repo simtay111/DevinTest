@@ -18,6 +18,7 @@ namespace ShouldIDrive
 
             animalIntroducer.IntroduceAnimal(myDog);
             animalIntroducer.IntroduceAnimal(myCat);
+             var myGenericAnima = new GenericAnimal();
         }
     }
 
@@ -28,11 +29,13 @@ namespace ShouldIDrive
 
     public class GenericAnimal
     {
+        public List<int> ListOfStepsWalked = new List<int>();
+
         public void Walk(int numberOfSteps)
         {
+            ListOfStepsWalked.Add(numberOfSteps);
 
         }
-
     }
 
     public class Dog : GenericAnimal, IAnimalThatMakesSound
@@ -60,8 +63,22 @@ namespace ShouldIDrive
         public void IntroduceAnimal(IAnimalThatMakesSound animalThatMakesSound)
         {
             Console.WriteLine("This animal makes the sound: " + animalThatMakesSound.GetSound());
+
+            var myCar = new Car(0);
         }
     }
 
+    public class Car
+    {
+        public Car(int gallonsOfFuel)
+        {
+            if (gallonsOfFuel <= 0)
+                throw new Exception("You need to provide a fuel amount");
+            //StartEngine();
+            //InflateTires();
+            //EnsureBatteryIsConnected();
+
+        }
+    }
 
 }
