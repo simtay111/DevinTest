@@ -56,6 +56,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AbilityToDriveCalculatorTests.cs" />
+    <Compile Include="BowlingGameTests.cs" />
     <Compile Include="DevinCounterTests.cs" />
     <Compile Include="DrinkPrinterTests.cs" />
     <Compile Include="HorseHayQualityProviderTests.cs" />
