@@ -9,12 +9,13 @@ namespace DevinLearnGood
 {
     class Auto
     {
-        public string Maker;
+        
         public string Model;
         public int Year;
         public string Color;
         public int Miles;
         public int Speed;
+        public string make;
 
         public string Maker
         {
@@ -41,13 +42,13 @@ namespace DevinLearnGood
         public string SpeedLimitViolation(string initialMessage, int speedLimit)
         {
             string message = "";
-            
+
             if (Speed > speedLimit)
                 message = "Too fast";
             else
                 message = "You're OK";
             return initialMessage + " " + message;
         }
-        
+
     }
 }
