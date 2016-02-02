@@ -1,6 +1,4 @@
 ﻿using System;
-using System.CodeDom;
-using System.Security.AccessControl;
 
 namespace DevinLearnGood
 {
@@ -9,23 +7,13 @@ namespace DevinLearnGood
         public WeaponFireResult FireOnce(Weapon weapon)
         {
             EnsureWeaponIdWasProvided(weapon);
+
             EnsureWeaponHasAmmunition(weapon);
             
-            var weaponName = GetWeaponNameOrUseDefault(weapon);
-            var weaponFireResult = new WeaponFireResult();
-            weaponFireResult.Description =
-                CreatFormattedString($"Weapon ({weapon.Id}): '{weaponName}' was fired, and did {weapon.Damage} damage on target.\"");               
-            weapon.Ammunition--;
-            weaponFireResult.WeaponUsed = weapon;
-            if (weapon.DamageMultiplierFromEnhancements <= 0)
-            {
-                int mathematicallyCorrectDamageMultiplierFromEnhancements = 1;
-                weaponFireResult.DamageDone += weapon.Damage*mathematicallyCorrectDamageMultiplierFromEnhancements;
-            }
-            else
-            {
-                weaponFireResult.DamageDone += weapon.Damage * weapon.DamageMultiplierFromEnhancements;
-            }
+            var weaponFireResult = FireWeaponAndGenerateResult(weapon);
+
+            CalculateWeaponDamanage(weapon, weaponFireResult);
+
             return weaponFireResult;
         }
 
@@ -49,10 +37,35 @@ namespace DevinLearnGood
             return $"*JARVIS* \"Sir, " + message;
         }
 
+        private WeaponFireResult FireWeaponAndGenerateResult(Weapon weapon)
+        {
+            var weaponFireResult = new WeaponFireResult();
+            var weaponName = GetWeaponNameOrUseDefault(weapon);
+            weaponFireResult.Description =
+                CreatFormattedString(
+                    $"Weapon ({weapon.Id}): '{weaponName}' was fired, and did {weapon.Damage} damage on target.\"");
+            weapon.Ammunition--;
+            weaponFireResult.WeaponUsed = weapon;
+            return weaponFireResult;
+        }
+
         private static string GetWeaponNameOrUseDefault(Weapon weapon)
         {
             var weaponName = string.IsNullOrEmpty(weapon.Name) ? "UNNAMED Prototype" : weapon.Name;
             return weaponName;
+        }
+
+        private static void CalculateWeaponDamanage(Weapon weapon, WeaponFireResult weaponFireResult)
+        {
+            if (weapon.DamageMultiplierFromEnhancements <= 0)
+            {
+                int mathematicallyCorrectDamageMultiplierFromEnhancements = 1;
+                weaponFireResult.DamageDone += weapon.Damage*mathematicallyCorrectDamageMultiplierFromEnhancements;
+            }
+            else
+            {
+                weaponFireResult.DamageDone += weapon.Damage*weapon.DamageMultiplierFromEnhancements;
+            }
         }
     }
 

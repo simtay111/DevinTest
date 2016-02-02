@@ -51,6 +51,7 @@
     <Compile Include="HorseHayToFeedAmountProvider.cs" />
     <Compile Include="IAlcoholMultiplierProvider.cs" />
     <Compile Include="IngredientPrinter.cs" />
+    <Compile Include="IronmanFlightControl.cs" />
     <Compile Include="IronmanWeaponsFireControl.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UnderstandingOO.cs" />
