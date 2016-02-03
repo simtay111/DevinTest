@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Dynamic;
 
 namespace DevinLearnGood
@@ -14,20 +15,29 @@ namespace DevinLearnGood
             {
                 var failResult = new JetpackFlightResult();
                 failResult.CanMakeIt = false;
-                failResult.Message = "*JARVIS* \"Sir, I do not recommend flying to that altitude unless you want to gamble loss of flight capabilities due to high altitude freezing.\"";
+                failResult.FailureMessage = "*JARVIS* \"Sir, I do not recommend flying to that altitude unless you want to gamble loss of flight capabilities due to high altitude freezing.\"";
                 return failResult;
             }
-            if (jetpack.FuelEfficiencyInPercentage <= 0)
-            {
-                throw new Exception("*JARVIS* \"Sir, your total flight fuel consumption efficiency is 100% inadequte. Recommend shedding weight in the suits armaments.\"");
-            }
-            int addedWeight = jetpack.SuitWeightInPounds - 225;
-            jetpack.FuelEfficiencyInPercentage = (jetpack.FuelEfficiencyInPercentage - (addedWeight / 10));
-
+            //
+            //
+            //  "*JARVIS* \"Sir, your total flight fuel consumption efficiency is 100% inadequte. Recommend shedding weight in the suits armaments.\""
+            //
 
             var goodResult = new JetpackFlightResult();
+
+            int pointReductionDueToOverweight = (jetpack.SuitWeightInPounds - 225) / 10;
+            jetpack.FuelEfficiencyInPercentage = jetpack.FuelEfficiencyInPercentage - pointReductionDueToOverweight;
+
+            var pointReductionDueToDirectionControlFlaws = ((100 - jetpack.DirectionControlRating) / 2);
+            jetpack.FuelEfficiencyInPercentage = jetpack.FuelEfficiencyInPercentage - pointReductionDueToDirectionControlFlaws;
+
+
+            if (pointReductionDueToOverweight > 0)
+                goodResult.WarningMessages.Add($"*JARVIS* \"Sir, I've made the necessary preflight weight optimization calculations, and am informing you that your flight efficiency will be reduced down to {jetpack.FuelEfficiencyInPercentage}%.\"");
+            if (pointReductionDueToDirectionControlFlaws > 0)
+                goodResult.WarningMessages.Add($"*JARVIS* \"Sir, I've made the necessary preflight direction control optimization calculations, and am informing you that your flight efficiency will be reduced down to {jetpack.FuelEfficiencyInPercentage}%.\"");
+
             goodResult.CanMakeIt = true;
-            goodResult.Message = $"*JARVIS* \"Sir, I've made the necessary preflight weight optimization calculations, and am informing you that your flight efficiency will be reduced down to {jetpack.FuelEfficiencyInPercentage}%.\"";
             return goodResult;
         }
 
@@ -36,9 +46,14 @@ namespace DevinLearnGood
 
     public class JetpackFlightResult
     {
+        public JetpackFlightResult()
+        {
+            WarningMessages = new List<string>();
+        }
         public int FuelBurned { get; set; }
         public bool CanMakeIt { get; set; }
-        public string Message { get; set; }
+        public string FailureMessage { get; set; }
+        public List<string> WarningMessages { get; set; }
     }
 
     public class Jetpack
