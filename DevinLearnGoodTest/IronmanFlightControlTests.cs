@@ -86,7 +86,7 @@ namespace DevinLearnGoodTest
             var result = _flightControl.CanMake(jetpack, 0, 100, 42);
 
             result.CanMakeIt.Should().BeFalse();
-            result.FailureMessage.Should().Be($"*JARVIS* \"Sir, I've calculated that you will not make it do to sub zero fuel effeciency.\"")
+            result.FailureMessage.Should().Be($"*JARVIS* \"Sir, I've calculated that you will not make it do to sub zero fuel effeciency.\"");
             result.WarningMessages.Count.Should().Be(0);
         }
 
