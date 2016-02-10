@@ -14,73 +14,71 @@ namespace StringCaluculatorz
         {
             _calculator = new StringCalculator();
         }
-
-        [Test]
         public void AnEmptyStringReturnsZero()
         {
             var input = "";
 
-            int result = _calculator.Calculate(input);
+            var result = _calculator.Calculator(input);
 
             result.Should().Be(0);
         }
+
         [Test]
         public void ASingleNumberReturnsTheValue()
         {
-            var input = "42";
+            var input = "9";
 
-            int result = _calculator.Calculate(input);
+            var result = _calculator.Calculator(input);
 
-            result.Should().Be(42);
+            result.Should().Be(9);
         }
 
         [Test]
         public void TwoNumbersCommaDelimitedReturnsTheSum()
         {
-            var input = "9,42";
+            var input = "1,2";
 
-            int result = _calculator.Calculate(input);
+            var result = _calculator.Calculator(input);
 
-            result.Should().Be(51);
+            result.Should().Be(3);
         }
-
 
         [Test]
         public void TwoNumbersNewLineDelimitedReturnsTheSum()
         {
-            var input = "1\n9";
+            var input = "1\n2";
 
-            int result = _calculator.Calculate(input);
+            var result = _calculator.Calculator(input);
 
-            result.Should().Be(10);
+            result.Should().Be(3);
         }
 
         [Test]
         public void ThreeNumbersDelimitedEitherWayReturnTheSum()
         {
-            var input = "1,4\n42";
+            var input = "1,2,3\n4";
 
-            int result = _calculator.Calculate(input);
+            var result = _calculator.Calculator(input);
 
-            result.Should().Be(47);
+            result.Should().Be(10);
         }
 
         [Test]
         public void NegativeNumbersThrowException()
         {
-            var input = "1,-3,4,7";
+            var input = "1,2,3,-4";
 
-            Assert.Throws<FormatException>(() => _calculator.Calculate(input));
+            Assert.Throws<FormatException>(() => _calculator.Calculator(input));
         }
 
         [Test]
         public void NumbersOverOneThousandAreIgnoredxorz()
         {
-            var input = "9001,2,56,101,42,1000";
+            var input = "1,2,3\n4,1004";
 
-            var result = _calculator.Calculate(input);
+            var result = _calculator.Calculator(input);
 
-            result.Should().Be(1201);
+            result.Should().Be(10);
         }
     }
 }

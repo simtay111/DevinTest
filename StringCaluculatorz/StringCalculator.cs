@@ -1,26 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System;
 
 namespace StringCaluculatorz
 {
     public class StringCalculator
     {
-        public int Calculate(string input)
+        public int Calculator(string input)
         {
             if (string.IsNullOrEmpty(input))
                 return 0;
             var result = 0;
-            var numbers = input.Split(',', '\n').ToList();
+            var numbers = input.Split(',', '\n');
             foreach (var singleNumber in numbers)
             {
-                var parsedSingleNumber = int.Parse(singleNumber);
-                if (parsedSingleNumber < 1001)
-                    result += parsedSingleNumber;
-                if (parsedSingleNumber < 0)
+                var singleParsedNumber = int.Parse(singleNumber);
+                if (singleParsedNumber < 0)
                     throw new FormatException();
+                if (singleParsedNumber < 1001)
+                    result += singleParsedNumber;
             }
             return result;
         }

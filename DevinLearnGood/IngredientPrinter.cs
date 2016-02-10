@@ -18,7 +18,7 @@ namespace DevinLearnGood
 
             foreach (var totalDrink in ingredients)
             {
-                totalDrink.
+                
             }
 
 
