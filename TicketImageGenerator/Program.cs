@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
 using System.Net.Cache;
+using DevinLearnGood;
 using Gma.QrCodeNet.Encoding;
 
 namespace TicketImageGenerator
@@ -15,13 +16,16 @@ namespace TicketImageGenerator
     {
         static void Main(string[] args)
         {
-          var gen = new TicketImageGenerator();
+            var dtermin = new LotteryDeterminator(new ChildRandomNumberGenerat(new Random()));
 
-            var request =  new TicketImageGeneratorRequestDetails();
-            request.ClientName = "JOHN JACOB JINGLE HEIMER SCHMIDT";
+            Console.WriteLine(dtermin.Bet());
+            //var gen = new TicketImageGenerator();
 
-            gen.PrintImage(request);
-            
+            //  var request =  new TicketImageGeneratorRequestDetails();
+            //  request.ClientName = "JOHN JACOB JINGLE HEIMER SCHMIDT";
+
+            //  gen.PrintImage(request);
+
         }
     }
 
@@ -40,7 +44,7 @@ namespace TicketImageGenerator
         {
             var image = new Bitmap(900, 500);
             var drawing = Graphics.FromImage(image);
-            
+
             Font font = new Font(FontFamily.GenericSerif, 18);
             Font otherFont = new Font(FontFamily.GenericSerif, 28);
             Brush textBrush = new SolidBrush(Color.Black);
@@ -51,9 +55,10 @@ namespace TicketImageGenerator
             drawing.DrawString($"Name: {request.ClientName}", font, textBrush, 0, 30);
             drawing.DrawString($"Age: {request.ClientAge}", font, textBrush, 0, 130);
             drawing.DrawString($"Ticket Type: {request.TicketType}", font, textBrush, 0, 230);
-            drawing.DrawString($"END TIME: {request.ClientEndTime}" + DateTime.Now.ToShortTimeString(), font, textBrush, 0, 330);
+            drawing.DrawString($"END TIME: {request.ClientEndTime}" + DateTime.Now.ToShortTimeString(), font, textBrush,
+                0, 330);
             drawing.DrawString($"Pricing Type: {request.PricingType}", otherFont, textBrush, 0, 430);
-            
+
             var encoder = new QrEncoder();
             var thingy = encoder.Encode(Guid.NewGuid().ToString());
 

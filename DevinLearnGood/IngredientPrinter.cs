@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace DevinLearnGood
 {
@@ -6,6 +7,7 @@ namespace DevinLearnGood
     {
         public List<string> GetPrintable(List<Ingredient> ingredients)
         {
+            //ingredients.Where((Ingredient x) => { return true; })
             throw new System.NotImplementedException();
         }
     }

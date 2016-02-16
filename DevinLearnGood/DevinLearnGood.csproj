@@ -51,9 +51,12 @@
     <Compile Include="HorseHayToFeedAmountProvider.cs" />
     <Compile Include="IAlcoholMultiplierProvider.cs" />
     <Compile Include="IngredientPrinter.cs" />
+    <Compile Include="IProvideEnergy.cs" />
     <Compile Include="IronmanFlightControl.cs" />
     <Compile Include="IronmanWeaponsFireControl.cs" />
+    <Compile Include="LotteryDeterminator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RandonNumberGenerator.cs" />
     <Compile Include="UnderstandingOO.cs" />
     <Compile Include="UncleBobBowling.cs" />
   </ItemGroup>

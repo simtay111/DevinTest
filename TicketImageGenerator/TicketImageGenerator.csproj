@@ -61,6 +61,12 @@
     <Content Include="Scripts\jquery-2.1.1.min.js" />
     <Content Include="Scripts\nugetexample.js" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DevinLearnGood\DevinLearnGood.csproj">
+      <Project>{37CDAA68-5682-4E2F-AB91-432B674D4F83}</Project>
+      <Name>DevinLearnGood</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

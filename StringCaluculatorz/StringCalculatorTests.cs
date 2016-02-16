@@ -61,7 +61,7 @@ namespace StringCaluculatorz
             var input = "1,4\n42";
 
             int result = _calculator.Calculate(input);
-
+            
             result.Should().Be(47);
         }
 
