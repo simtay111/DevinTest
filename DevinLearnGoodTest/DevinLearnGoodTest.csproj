@@ -60,7 +60,11 @@
     <Compile Include="DependencyInjectionTests.cs" />
     <Compile Include="DevinCounterTests.cs" />
     <Compile Include="DrinkPrinterTests.cs" />
+
     <Compile Include="DrivableDistanceCalculatorTests.cs" />
+
+    <Compile Include="FizzBuzzTests.cs" />
+
     <Compile Include="HorseHayQualityProviderTests.cs" />
     <Compile Include="HorseHayToFeedAmountProviderTests.cs" />
     <Compile Include="IngredientPrinterTests.cs" />

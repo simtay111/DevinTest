@@ -47,6 +47,7 @@
     <Compile Include="DependencyInjectionSample.cs" />
     <Compile Include="DrinkCounter.cs" />
     <Compile Include="DrinkPrinter.cs" />
+    <Compile Include="FizzBuzz.cs" />
     <Compile Include="HorseHayQualityProvider.cs" />
     <Compile Include="HorseHayToFeedAmountProvider.cs" />
     <Compile Include="IAlcoholMultiplierProvider.cs" />

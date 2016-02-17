@@ -38,6 +38,13 @@ namespace ShouldIDrive
         }
     }
 
+    public interface ITemperatureSensor
+    {
+        int GetTemperature();
+    }
+
+    
+
     public class Dog : GenericAnimal, IAnimalThatMakesSound
     {
         public int NumberOfTennisBallsEaten { get; set; }

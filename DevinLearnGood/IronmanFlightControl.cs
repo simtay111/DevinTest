@@ -6,7 +6,6 @@ namespace DevinLearnGood
 {
     public class IronmanFlightControl
     {
-
         public JetpackFlightResult CanMake(Jetpack jetpack, int startingAltitude, int startingFuelInPlasmaUnits, int desiredDistanceInMiles)
         {
             if (jetpack.Id <= 0)
@@ -15,13 +14,10 @@ namespace DevinLearnGood
             {
                 var failResult = new JetpackFlightResult();
                 failResult.CanMakeIt = false;
-                failResult.FailureMessage = "*JARVIS* \"Sir, I do not recommend flying to that altitude unless you want to gamble loss of flight capabilities due to high altitude freezing.\"";
+                failResult.FailureMessages.Add($"*JARVIS* \"Sir, I do not recommend flying to that altitude unless you want to gamble loss of flight " +
+                                            "capabilities due to high altitude freezing.\"");
                 return failResult;
             }
-            //
-            //
-            //  "*JARVIS* \"Sir, your total flight fuel consumption efficiency is 100% inadequte. Recommend shedding weight in the suits armaments.\""
-            //
 
             var goodResult = new JetpackFlightResult();
 
@@ -31,31 +27,47 @@ namespace DevinLearnGood
             var pointReductionDueToDirectionControlFlaws = ((100 - jetpack.DirectionControlRating) / 2);
             jetpack.FuelEfficiencyInPercentage = jetpack.FuelEfficiencyInPercentage - pointReductionDueToDirectionControlFlaws;
 
+            if (jetpack.FuelEfficiencyInPercentage <= 0)
+            {
+                var failResult = new JetpackFlightResult();
+                failResult.CanMakeIt = false;
+                failResult.FailureMessages.Add($"*JARVIS* \"Sir, your total flight fuel consumption efficiency is 100% inadequte. Recommend shedding " +
+                                            "weight in the suits armaments to increase flight performance.\"");
+                return failResult;
+            }
 
             if (pointReductionDueToOverweight > 0)
-                goodResult.WarningMessages.Add($"*JARVIS* \"Sir, I've made the necessary preflight weight optimization calculations, and am informing you that your flight efficiency will be reduced down to {jetpack.FuelEfficiencyInPercentage}%.\"");
+                goodResult.WarningMessages.Add($"*JARVIS* \"Sir, I've made the necessary preflight weight optimization calculations, and am informing " +
+                                               $"you that your flight efficiency will be reduced down to {jetpack.FuelEfficiencyInPercentage}%.\"");
             if (pointReductionDueToDirectionControlFlaws > 0)
-                goodResult.WarningMessages.Add($"*JARVIS* \"Sir, I've made the necessary preflight direction control optimization calculations, and am informing you that your flight efficiency will be reduced down to {jetpack.FuelEfficiencyInPercentage}%.\"");
+                goodResult.WarningMessages.Add($"*JARVIS* \"Sir, I've made the necessary preflight direction control optimization calculations, and am " +
+                                               $"informing you that your flight efficiency will be reduced down to {jetpack.FuelEfficiencyInPercentage}%.\"");
 
+            int flightCalculation = startingFuelInPlasmaUnits - desiredDistanceInMiles / 100;
+            if (flightCalculation < 1)
+            {
+                var failResult = new JetpackFlightResult();
+                failResult.CanMakeIt = false;
+                failResult.FailureMessages.Add($"*JARVIS* \"Sir, I regret to inform you that you do not have enough total fuel to make it to your destination.\"");
+                return failResult;
+            }
+            
             goodResult.CanMakeIt = true;
             return goodResult;
         }
-
-
     }
-
     public class JetpackFlightResult
     {
         public JetpackFlightResult()
         {
             WarningMessages = new List<string>();
+            FailureMessages = new List<string>();
         }
         public int FuelBurned { get; set; }
         public bool CanMakeIt { get; set; }
-        public string FailureMessage { get; set; }
+        public List<string> FailureMessages { get; set; }
         public List<string> WarningMessages { get; set; }
     }
-
     public class Jetpack
     {
         public int Id { get; set; }
