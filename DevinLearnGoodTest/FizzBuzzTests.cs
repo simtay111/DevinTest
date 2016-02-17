@@ -21,27 +21,33 @@ namespace DevinLearnGoodTest
         }
 
         [Test]
-        public void SaysFizzIfItsDivisibleByThree()
+        public void TextForDivisibleByThreeIsFizz()
         {
-            int input = 9;
+            var resultingOutput = _fizzbuzz.FizzBuzzer();
 
-            string result = _fizzbuzz.FizzBuzzer(input);
-
-            result.Should().Be("Fizz");
-
-            Console.WriteLine(result);
+            resultingOutput[0].Should().Be("1");
+            resultingOutput[1].Should().Be("2");
+            resultingOutput[2].Should().Be("Fizz");
         }
 
         [Test]
-        public void SaysBuzzIfItsDivisibleByFive()
+        public void TextForDivisibleByFiveIsBuzz()
         {
-            //nerp
+            var resultingOutput = _fizzbuzz.FizzBuzzer();
+
+            resultingOutput[3].Should().Be("4");
+            resultingOutput[4].Should().Be("Buzz");
+            resultingOutput[9].Should().Be("Buzz");
         }
 
         [Test]
-        public void SaysFizzAndBuzzIfItsDivisibleByThreeAndFive()
+        public void TextForDivisibleByThreeAndFiveIsFizzBuzz()
         {
-            //herp
+            var resultingOutput = _fizzbuzz.FizzBuzzer();
+
+            resultingOutput[14].Should().Be("FizzBuzz");
+            resultingOutput[29].Should().Be("FizzBuzz");
+            resultingOutput[44].Should().Be("FizzBuzz");
         }
     }
 }
